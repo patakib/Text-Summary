@@ -23,7 +23,4 @@ def user_login(request):
                 return HttpResponse('Invalid login') #if the user is not authenticated
     else:
         form = LoginForm()
-    return render(Request, 'textsummary_app/login.html', {'form':form})
-
-
-# Create your views here.
+    return render(request, 'textsummary_app/login.html', {'form':form})
