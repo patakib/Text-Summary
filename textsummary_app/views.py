@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm
+from django.contrib.auth.decorators import login_required
 
 def user_login(request):
     if request.method == 'POST': #check whether method is POST or GET
@@ -24,3 +25,8 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, 'textsummary_app/login.html', {'form':form})
+
+@login_required
+# checks whether the current user is authenticated. If yes, it executes the view, if not, redirects to the login URL
+def dashboard(request):
+    return render(request, 'textsummary_app/dashboard.html',{'section': 'dashboard'})
