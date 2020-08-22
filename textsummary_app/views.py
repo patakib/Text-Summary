@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
-from .forms import LoginForm, UserRegistrationForm
+from .forms import LoginForm, UserRegistrationForm, TextInput
 from django.contrib.auth.decorators import login_required
+#new feature:
+from textsummary_app.randomscript import example
 
 def register(request):
     if request.method == 'POST':
@@ -47,3 +49,16 @@ def user_login(request):
 # checks whether the current user is authenticated. If yes, it executes the view, if not, redirects to the login URL
 def dashboard(request):
     return render(request, 'textsummary_app/dashboard.html',{'section': 'dashboard'})
+
+# new feature, it works somehow:
+def textinput(request):
+    return render(request, 'textsummary_app/textinput.html')
+
+def script(request):
+    text = request.GET.get('result')
+    result = example(text)
+    return render(request, 'textsummary_app/result.html', result)
+
+# def textinput(request):
+#     text = {}
+#     return render(request, 'textsummary_app/textinput.html', text)

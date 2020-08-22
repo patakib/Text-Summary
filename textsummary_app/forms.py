@@ -19,3 +19,6 @@ class UserRegistrationForm(forms.ModelForm):
 class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
+
+class TextInput(forms.Form):
+    text = forms.CharField(widget=forms.Textarea(attrs={"rows": "50", "cols": "180"}))

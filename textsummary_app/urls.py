@@ -29,4 +29,7 @@ path('', views.dashboard, name='dashboard'),
 #     name='password_reset_complete'),
 path('',include('django.contrib.auth.urls')),
 path('register/',views.register, name='register'),
+#new feature:
+path('textinput/', views.textinput, name='textinput'),
+path('result/', views.script, name='result'),
 ]

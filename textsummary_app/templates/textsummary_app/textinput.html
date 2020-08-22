@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Text summary{% endblock %}
+
+{% block content %}
+  <h1>Text Summarization</h1>
+
+  <!--from here comes the interesting part-->
+  <form action='/result/'>
+    {{ form.as_p }}
+    {% csrf_token %}
+    <label>Paste the text you want to summarize:</label>
+    <textarea name="handle" placeholder="your text"></textarea>
+    <p><input type="submit" value="Summarize"></p>
+  </form>
+  <!--until here-->
+{% endblock %}
