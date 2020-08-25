@@ -55,6 +55,6 @@ def textinput(request):
     return render(request, 'textsummary_app/textinput.html')
 
 def script(request):
-    text = request.POST.get('handle')
-    result = example(text)
+    text = request.POST.get('handle', None)
+    result = text.upper()
     return render(request, 'textsummary_app/result.html', {'result': result})

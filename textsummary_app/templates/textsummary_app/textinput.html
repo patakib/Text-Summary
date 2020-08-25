@@ -6,8 +6,8 @@
   <h1>Text Summarization</h1>
 
   <!--from here comes the interesting part-->
-  <form action='/result/'>
-    {{ form.as_p }}
+  <form action='/result/' method="POST">
+    {{ form }}
     {% csrf_token %}
     <label>Paste the text you want to summarize:</label>
     <textarea name="handle" placeholder="your text"></textarea>
