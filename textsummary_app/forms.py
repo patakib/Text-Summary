@@ -21,4 +21,4 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
 
 class TextInput(forms.Form):
-    handle = forms.CharField(widget=forms.Textarea(attrs={"rows": "50", "cols": "180"}))
+    handle = forms.CharField(widget=forms.Textarea(attrs={'rows': 50, 'cols': 180}))
