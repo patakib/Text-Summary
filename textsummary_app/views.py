@@ -47,12 +47,8 @@ def user_login(request):
 
 @login_required
 # checks whether the current user is authenticated. If yes, it executes the view, if not, redirects to the login URL
-def dashboard(request):
-    return render(request, 'textsummary_app/dashboard.html',{'section': 'dashboard'})
-
-# new feature:
 def textinput(request):
-    return render(request, 'textsummary_app/textinput.html')
+    return render(request, 'textsummary_app/textinput.html',{'section': 'textinput'})
 
 def script(request):
     text = request.POST.get('handle', None)

@@ -11,11 +11,10 @@
       <span class="logo">Textsummary Application</span>
       {% if request.user.is_authenticated %}
         <ul class="menu">
-          <li {% if section == "dashboard" %}class="selected"{% endif %}>
-            <a href="{% url "dashboard" %}">My dashboard</a>
-          </li>
           <li {% if section == "Text Summarizer" %}class="selected"{% endif %}>
             <a href="{% url "textinput" %}">Text Summarizer</a>
+          <!-- <li {% if section == "Register" %}class="selected"{% endif %}>
+            <a href="{% url "register" %}">Register</a> -->
           </li>
         </ul>
       {% endif %}
@@ -26,6 +25,7 @@
         <a href="{% url "logout" %}">Logout</a>
       {% else %}
         <a href="{% url "login" %}">Log-in</a>
+        <a href="{% url "register" %}">Register</a>
       {% endif %}
       </span>
     </div>
