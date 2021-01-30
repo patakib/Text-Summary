@@ -6,7 +6,7 @@ Link to the app:
 http://www.textsummary-app.hu/
 
 ### Demo
-<img src="text-summarizer.gif>
+<img src="text-summarizer.gif">
 
 Resources, inspiration:
 The original code for the NLTK functions is taken from [here](https://github.com/edubey/text-summarizer/blob/master/text-summarizer.py). I made some modifications and implemented it in Django deployment, but huge credit to [edubey](https://github.com/edubey) who shared his code for text summarization.  
